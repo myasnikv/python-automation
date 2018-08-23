@@ -16,8 +16,8 @@ class TestFibonacci:
             "Function returns wrong data"
 
     def testSingleFibNegative(self):
-        assert singleFibNumber(-8) == 0, \
-            "Function returns wrong data"
+        assert singleFibNumber(-8) == False
+
 
     def testSingleFibWrongType(self):
         assert singleFibNumber("2") == False
