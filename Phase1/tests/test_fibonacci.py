@@ -1,4 +1,4 @@
-from project.fibonacci_main import generateFibonacci, fib_second, singleFibNumber
+from Phase1.project.fibonacci_main import generateFibonacci, fib_second, singleFibNumber
 
 
 class TestFibonacci:
