@@ -17,10 +17,6 @@ jobs:
 
     working_directory: ~/repo
 
-    branches:
-      only:
-        - Phase1
-
     steps:
       - checkout
 
