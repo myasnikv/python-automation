@@ -1,5 +1,5 @@
 def main():
-    print(list(generateFibonacci(10)))
+    print(list(generateFibonacci(22)))
     print(fib_second(13))
     print(singleFibNumber(11))
 
@@ -18,7 +18,9 @@ def fib_second(n):
     return fibo
 
 def singleFibNumber(n):
-    if n <= 0:
+    if type(n) != int:
+        return False
+    elif n <= 0:
         return 0
     elif n == 1:
         return 1
