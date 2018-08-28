@@ -25,7 +25,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest
+            pytest --workers 4 --tests-per-worker auto --reruns 2 -v --ignore Phase1 --ignore Phase2
       - store_artifacts:
           path: test-reports
           destination: test-reports
