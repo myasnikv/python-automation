@@ -25,7 +25,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest -n 3 --dist=loadscope -v --driver Chrome --driver-path ./chromedriver --ignore Phase1 --ignore Phase2 --ignore Phase3
+            pytest -n 3 --dist=loadscope -v --ignore Phase1 --ignore Phase2 --ignore Phase3
       - store_artifacts:
           path: test-reports
           destination: test-reports
