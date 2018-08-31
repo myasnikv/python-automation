@@ -25,7 +25,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            chmod 755 ./drivers/chromedriver
+            chmod 755 ./chromedriver/chromedriver
             pytest -n 3 --dist=loadscope -v --ignore Phase1 --ignore Phase2 --ignore Phase3 --driver Chrome --driver-path ./chromedriver/chromedriver
       - store_artifacts:
           path: test-reports
