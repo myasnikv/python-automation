@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.6.1
+      - image: circleci/python:3.6.6-stretch-node-browsers
     working_directory: ~/repo
     steps:
       - checkout
@@ -25,7 +25,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest --workers 4 --tests-per-worker auto --reruns 2 -v --ignore Phase1 --ignore Phase2
+            pytest -n 3 --dist=loadscope -v --ignore Phase1 --ignore Phase2 --ignore Phase3
       - store_artifacts:
           path: test-reports
           destination: test-reports
