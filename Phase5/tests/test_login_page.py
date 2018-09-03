@@ -3,7 +3,9 @@ import pytest
 
 from Phase5.pageobjects.login_page import LoginPage
 from Phase5.utils.values import v_dict
+from Phase5.utils.values import Rerun
 
+r = Rerun()
 
 @pytest.mark.usefixtures("wd")
 class TestLogin:
@@ -33,3 +35,7 @@ class TestLogin:
     @allure.step("Test login with correct Credentials")
     def test_login_correct_credentials(self):
         assert self.init_login_page().login_jira(v_dict().get('cc'), v_dict().get('cc')) is True
+
+    @allure.step("Test for Re-Run with ScreenShot")
+    def test_rerun(self):
+        assert r.re_run_test() is 2
