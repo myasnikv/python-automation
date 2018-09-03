@@ -28,7 +28,8 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            chmod 755 ./Phase5/chromedriver/chromedriver
+            ls
+            chmod 755 ./chromedriver/chromedriver
             pytest -v --ignore Phase1 --ignore Phase2 --ignore Phase3 --ignore Phase4 --driver Chrome --alluredir=./allure-results ./allure-2.7.0/bin/allure generate -c
       - store_artifacts:
           path: allure-reports
