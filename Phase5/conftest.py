@@ -1,3 +1,5 @@
+import os
+
 import allure
 import pytest
 from selenium import webdriver
@@ -12,7 +14,10 @@ def wd(request):
     chrome_options = Options()
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--window-size=1920,1080")
-    driver = webdriver.Chrome('.\\chromedriver\\chromedriver.exe', chrome_options=chrome_options)
+    if os.name == 'nt':
+        driver = webdriver.Chrome(".\\chromedriver\\chromedriver.exe", chrome_options=chrome_options)
+    else:
+        driver = webdriver.Chrome('./chromedriver/chromedriver', chrome_options=chrome_options)
     request.cls.driver = driver
     yield
     driver.close()
