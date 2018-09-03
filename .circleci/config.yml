@@ -18,7 +18,6 @@ jobs:
             pip install -r requirements.txt
             wget https://github.com/allure-framework/allure2/releases/download/2.7.0/allure-2.7.0.zip
             unzip allure-2.7.0.zip
-            export PATH=$PATH:/home/circleci/repo/allure-2.7.0/bin
       - save_cache:
           paths:
             - ./venv
@@ -29,8 +28,8 @@ jobs:
           command: |
             . venv/bin/activate
             ls
-            chmod 755 ./chromedriver/chromedriver
-            pytest -v --ignore Phase1 --ignore Phase2 --ignore Phase3 --ignore Phase4 --driver Chrome --alluredir=./allure-results ./allure-2.7.0/bin/allure generate -c
+            chmod -R 777 ./Phase5/chromedriver
+            pytest -v --ignore Phase1 --ignore Phase2 --ignore Phase3 --ignore Phase4 --driver Chrome --alluredir=./pytest-report ./allure-2.7.0/bin/allure generate ./pytest-report
       - store_artifacts:
           path: allure-reports
           destination: allure-reports
