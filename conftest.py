@@ -16,9 +16,9 @@ def wd(request):
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--window-size=1920,1080")
     if os.name == 'nt':
-        driver = webdriver.Chrome('.\\Phase5\\chromedriver\\chromedriver.exe', chrome_options=chrome_options)
+        driver = webdriver.Chrome('.\\drv\\chromedriver.exe', chrome_options=chrome_options)
     else:
-        driver = webdriver.Chrome('./Phase5/chromedriver/chromedriver', chrome_options=chrome_options)
+        driver = webdriver.Chrome('./drv/chromedriver', chrome_options=chrome_options)
     request.cls.driver = driver
     yield
     driver.close()
