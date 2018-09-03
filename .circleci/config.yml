@@ -31,7 +31,7 @@ jobs:
             ls Phase5
             chmod -R 777 ./Phase5/chromedriver
             chmod -R 777 ./allure-2.7.0/bin/
-            pytest -v --driver Chrome --alluredir=./pytest_report --ignore Phase1 --ignore Phase2 --ignore Phase3 --ignore Phase4
+            pytest -v --driver Chrome --driver-path ./chromedriver/chromedriver --alluredir=./pytest_report --ignore Phase1 --ignore Phase2 --ignore Phase3 --ignore Phase4
             ./allure-2.7.0/bin/allure generate -c  
       - store_artifacts:
           path: allure-reports
