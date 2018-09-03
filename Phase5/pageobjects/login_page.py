@@ -1,6 +1,6 @@
 import allure
 from selenium.webdriver.common.by import By
-from pageobjects.base import BasePage
+from Phase5.pageobjects.base import BasePage
 
 login_id = 'login-form-username'
 password_id = 'login-form-password'

@@ -1,8 +1,8 @@
 import allure
 import pytest
 
-from pageobjects.login_page import LoginPage
-from utils.values import v_dict
+from Phase5.pageobjects.login_page import LoginPage
+from Phase5.utils.values import v_dict
 
 
 @pytest.mark.usefixtures("wd")

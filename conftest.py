@@ -4,7 +4,8 @@ import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from utils.rest_utils import RestFlow
+
+from Phase5.utils.rest_utils import RestFlow
 
 rest = RestFlow()
 
@@ -15,9 +16,9 @@ def wd(request):
     chrome_options.add_argument("--disable-extensions")
     chrome_options.add_argument("--window-size=1920,1080")
     if os.name == 'nt':
-        driver = webdriver.Chrome(".\\chromedriver\\chromedriver.exe", chrome_options=chrome_options)
+        driver = webdriver.Chrome('.\\Phase5\\chromedriver\\chromedriver.exe', chrome_options=chrome_options)
     else:
-        driver = webdriver.Chrome('./chromedriver/chromedriver', chrome_options=chrome_options)
+        driver = webdriver.Chrome('./Phase5/chromedriver/chromedriver', chrome_options=chrome_options)
     request.cls.driver = driver
     yield
     driver.close()

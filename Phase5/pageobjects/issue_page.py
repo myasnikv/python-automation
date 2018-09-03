@@ -2,7 +2,7 @@ import allure
 from selenium.webdriver.common.by import By
 import time
 
-from pageobjects.base import BasePage
+from Phase5.pageobjects.base import BasePage
 
 create_issue_button_id = "create_link"
 summary_field_id = "summary"
