@@ -18,12 +18,12 @@ class TestSearchIssue:
     issue_page = IssuePage(web)
 
     def setup_class(self):
-        self.rest.post_issues(2, "VM Search")
+        self.rest.post_issues(5, "VM Search")
         self.web.get(issues_url)
         self.login_page.login_jira(cc, cc)
 
     def test_search_issues5(self):
-        assert self.issue_page.search_issues("VM") == 2
+        assert self.issue_page.search_issues("VM") == 5
 
     def test_search_issues1(self):
         assert self.issue_page.search_issues("VM Search0") == 1
