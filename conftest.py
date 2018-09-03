@@ -18,7 +18,7 @@ def wd(request):
     if os.name == 'nt':
         driver = webdriver.Chrome('.\\Phase5\\chromedriver\\chromedriver.exe', chrome_options=chrome_options)
     else:
-        driver = webdriver.Chrome('./chromedriver/chromedriver', chrome_options=chrome_options)
+        driver = webdriver.Chrome('./Phase5/chromedriver/chromedriver', chrome_options=chrome_options)
     request.cls.driver = driver
     yield
     driver.close()
