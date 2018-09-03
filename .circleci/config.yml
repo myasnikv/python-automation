@@ -29,9 +29,7 @@ jobs:
           command: |
             . venv/bin/activate
             chmod 755 ./Phase4/chromedriver/chromedriver
-#            -n 3 --dist=loadscope
-            pytest -v --ignore Phase1 --ignore Phase2 --ignore Phase3 --ignore Phase4 --driver Chrome --driver-path ./Phase4/chromedriver/chromedriver 
-            --alluredir ./pytest-reports ./allure generate
+            pytest -v --ignore Phase1 --ignore Phase2 --ignore Phase3 --ignore Phase4 --driver Chrome --driver-path ./Phase4/chromedriver/chromedriver --alluredir ./pytest-reports ./allure generate
       - store_artifacts:
           path: allure-reports
           destination: allure-reports
