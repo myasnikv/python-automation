@@ -29,7 +29,8 @@ jobs:
             . venv/bin/activate
             chmod -R 777 ./Phase5/chromedriver
             chmod -R 777 ./allure-2.7.0/bin/
-            cd Phase5
+            cd ./Phase5
+            ls
             pytest -v --driver Chrome --driver-path ./chromedriver/chromedriver --alluredir=./pytest_report
             cd ..
             ./allure-2.7.0/bin/allure generate -c  
