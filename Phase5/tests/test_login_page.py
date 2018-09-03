@@ -14,6 +14,10 @@ class TestLogin:
         login_page = LoginPage(self.driver)
         return login_page
 
+    @allure.step("Test for Re-Run")
+    def test_rerun(self):
+        assert r.re_run_test() is 2
+
     @allure.step("Initial Page Check")
     def test_check_title(self):
         self.driver.get(v_dict().get('auth_url'))
@@ -36,6 +40,4 @@ class TestLogin:
     def test_login_correct_credentials(self):
         assert self.init_login_page().login_jira(v_dict().get('cc'), v_dict().get('cc')) is True
 
-    @allure.step("Test for Re-Run with ScreenShot")
-    def test_rerun(self):
-        assert r.re_run_test() is 2
+

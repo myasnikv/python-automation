@@ -20,7 +20,7 @@ def wd(request):
     else:
         driver = webdriver.Chrome('./Phase5/chromedriver/chromedriver', chrome_options=chrome_options)
     request.cls.driver = driver
-    yield
+    yield driver
     driver.close()
 
 
