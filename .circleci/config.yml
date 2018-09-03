@@ -29,7 +29,7 @@ jobs:
             . venv/bin/activate
             ls
             chmod -R 777 ./Phase5/chromedriver
-            pytest -v --ignore Phase1 --ignore Phase2 --ignore Phase3 --ignore Phase4 --driver Chrome --alluredir=/pytest_reports ./allure-2.7.0/bin/allure generate -c
+            pytest -v --ignore Phase1 --ignore Phase2 --ignore Phase3 --ignore Phase4 --driver Chrome --alluredir=./pytest_reports ./allure-2.7.0/bin/allure generate -c
       - store_artifacts:
           path: allure-reports
           destination: allure-reports
