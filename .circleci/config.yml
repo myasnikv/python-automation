@@ -16,6 +16,8 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
+            wget https://github.com/allure-framework/allure2/releases/download/2.7.0/allure-2.7.0.zip
+            unzip allure-2.7.0.zip
       - save_cache:
           paths:
             - ./venv
@@ -25,9 +27,10 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            chmod 755 ./Phase4/chromedriver/chromedriver
-            ls
-            pytest -n 3 --dist=loadscope -v --ignore Phase1 --ignore Phase2 --ignore Phase3 --driver Chrome --driver-path ./Phase4/chromedriver/chromedriver
+            chmod -R 777 ./Phase5/chromedriver/
+            chmod -R 777 ./allure-2.7.0/bin/
+            pytest -n 3 --dist=loadscope -v --driver Chrome --reruns 2 --alluredir=./allure-results --ignore Phase1 --ignore Phase2 --ignore Phase3 --ignore Phase4
+            ./allure-2.7.0/bin/allure generate -c
       - store_artifacts:
-          path: test-reports
-          destination: test-reports
+          path: allure-report
+          destination: allure-report
