@@ -5,7 +5,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from Phase5.utils.rest_utils import RestFlow
+from Phase6.utils.rest_utils import RestFlow
 
 rest = RestFlow()
 
@@ -41,4 +41,4 @@ def pytest_runtest_makereport(item, call):
 def create_issues(request):
     rest.post_issues(5, "VM Search")
     yield
-    rest.delete_issue()
+    rest.delete_issues()
